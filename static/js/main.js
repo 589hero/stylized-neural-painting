@@ -1,5 +1,6 @@
 function formSend() {
-  // 작업 진행중이면 alert띄우기
+  document.getElementById('result-img').setAttribute("src", '../static/images/thumbnail-1.jpeg');
+  
   const formData = new FormData();
   const inputImage = document.getElementById('org-img-input').files[0];
   const typeValues = document.getElementsByName('type-radio');
@@ -49,7 +50,6 @@ function setThumbnail(event, id){
 
   if(uploadImagePath.length == 0){
     document.getElementById(id).setAttribute("src", '../static/images/thumbnail-1.jpeg');
-    document.getElementById('result-img').setAttribute("src", '../static/images/thumbnail-1.jpeg');
   } else{
     const reader = new FileReader();
   
