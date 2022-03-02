@@ -17,7 +17,7 @@ app = Flask(__name__, template_folder='./templates/')
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 requests_queue = Queue()
-BATCH_SIZE = 1
+BATCH_SIZE = 2
 CHECK_INTERVAL = 0.1
 
 # settings
