@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="../static/js/main.js"></script>
+    </head>
+    <body>
+        <div id="page-wrapper" class="container my-5">
+            <div id="header" class="text-center">
+                <h1 class="mb-3">Stylized Neural Painting</h1>
+                <h6>Change style of an image using Neural Network!</h6>
+                <a href="https://github.com/589hero/stylized-neural-painting" class="mr-5">GitHub</a>
+                <a href="https://ainize.ai/589hero/stylized-neural-painting">Ainize</a>
+            </div>
+            <hr class="my-3">
+
+            <div id="explanation" class="text-center">
+                <h2 class="mb-3">How to use</h1>
+                <div class="text-left d-inline-flex">
+                    <p>
+                        1.&nbsp;&nbsp;Upload Original Image<br>
+                        2.&nbsp;&nbsp;Choose a style type<br>
+                        3.&nbsp;&nbsp;Press "Run" Button<br>
+                        4.&nbsp;&nbsp;Check out the output image with changed background!<br>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div id="examples" class="text-center">
+                <h2>Examples</h1>
+                <h4 class="mb-3">(Top: Water Color, Bottom: Oil Paint Brush)</h4>
+                <div id="example">
+                    <figure style="display: inline-block;">
+                        <img id="sample1-1" width="250" height="200" src="../static/images/apple.jpg">
+                    </figure>
+                    <figure style="display: inline-block;">
+                        <img id="sample1-2" width="250" height="200" src="../static/images/animal-1-out.png">
+                    </figure>
+                </div>
+                <div id="example2">
+                    <figure style="display: inline-block;">
+                        <img id="sample2-1" width="250" height="200" src="../static/images/sunflowers.jpg">
+                        <figcaption>Original Image</figcaption>
+                    </figure>
+                    <figure style="display: inline-block;">
+                        <img id="sample2-2" width="250" height="200" src="../static/images/car-1-out.png">
+                        <figcaption>Result Image</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div id="img-uploader" class="row justify-content-center">
+                <div class="col-4 col-6-medium col-12-small text-center">
+                    <section>
+                        <h3>Original Image</h2>
+                        <img id="org-img" class="mb-2" width="350" height="350" src="../static/images/thumbnail-1.jpeg">
+                        <input type='file' id='org-img-input' onchange="setThumbnail(event, 'org-img');">
+                    </section>
+                </div>
+                <div class="mx-3 col-3 col-4-medium col-6-small">
+                    <section>
+                        <h3 class="text-center">Type</h3>
+                        <div class="border border-dark p-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="type-radio" id="type-radio1" value="watercolor" checked>
+                                <label class="form-check-label" for="type-radio1">
+                                  Water Color
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="type-radio" id="type-radio2" value="markerpen">
+                                <label class="form-check-label" for="type-radio2">
+                                    Marker Pen
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="type-radio" id="type-radio3" value="oilpaintbrush">
+                                <label class="form-check-label" for="type-radio3">
+                                    Oil Paint Brush
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="type-radio" id="type-radio4" value="rectangle">
+                                <label class="form-check-label" for="type-radio4">
+                                    8Bit
+                                </label>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button id="run" type='submit' class="btn btn-primary" style="margin-left: auto;" onclick="formSend();"> RUN </button>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="col-4 col-6-medium col-12-small text-center">
+                    <h3>Result Image</h3>
+                    <img id="result-img" style="display: inline-block;" width="350" height="350" src="../static/images/thumbnail-1.jpeg">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

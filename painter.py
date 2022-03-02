@@ -349,10 +349,10 @@ class ProgressivePainter(PainterBase):
 
     def _drawing_step_states(self):
         acc = self._compute_acc().item()
-        print('iteration step %d, G_loss: %.5f, step_acc: %.5f, grid_scale: %d / %d, strokes: %d / %d'
-              % (self.step_id, self.G_loss.item(), acc,
-                 self.m_grid, self.max_divide,
-                 self.anchor_id + 1, self.m_strokes_per_block))
+        # print('iteration step %d, G_loss: %.5f, step_acc: %.5f, grid_scale: %d / %d, strokes: %d / %d'
+        #       % (self.step_id, self.G_loss.item(), acc,
+        #          self.m_grid, self.max_divide,
+        #          self.anchor_id + 1, self.m_strokes_per_block))
         vis2 = utils.patches2img(self.G_final_pred_canvas, self.m_grid).clip(min=0, max=1)
         if self.args.disable_preview:
             pass
